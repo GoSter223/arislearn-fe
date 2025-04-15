@@ -1,0 +1,150 @@
+<!-- register-guru.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Guru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animasi zoom in dan out */
+      .zoom-in {
+        animation: zoomIn 0.3s ease-out;
+      }
+
+      .zoom-out {
+        animation: zoomOut 0.3s ease-in;
+      }
+
+      @keyframes zoomIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes zoomOut {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <form class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6">
+      <div class="text-sm text-gray-600">
+        <p class="">
+          <a
+            href="index.html"
+            class="text-[#0D009E] font-medium hover:underline"
+            >← Kembali ke Beranda</a
+          >
+        </p>
+      </div>
+      <h2 class="text-2xl font-semibold text-center text-[#0D009E]">
+        Selamat Datang
+      </h2>
+
+      <input
+        type="email"
+        placeholder="Email"
+        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-[#0D009E]"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-[#0D009E]"
+      />
+
+      <button
+        type="submit"
+        class="w-full bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+      >
+        Login
+      </button>
+      <div class="text-center text-sm text-gray-600 mt-4">
+        <p id="openModalBtn">
+          Belum punya akun?
+          <a href="#" class="text-[#0D009E] font-medium hover:underline"
+            >Daftar di sini</a
+          >
+        </p>
+      </div>
+    </form>
+
+    <!-- Overlay dan Modal -->
+    <div
+      id="modalOverlay"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        id="modalBox"
+        class="bg-white p-6 rounded-2xl shadow-xl w-80 text-center zoom-in relative"
+      >
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">Daftar Sebagai</h2>
+        <div class="space-y-4">
+          <a
+            href="register-guru.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Guru</a
+          >
+          <a
+            href="register-siswa.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Siswa</a
+          >
+          <a
+            href="register-umum.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Umum</a
+          >
+        </div>
+
+        <!-- Tombol close -->
+        <button
+          id="closeModalBtn"
+          class="absolute top-2 right-2 text-white bg-[#0D009E] rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
+      const overlay = document.getElementById("modalOverlay");
+      const modalBox = document.getElementById("modalBox");
+
+      openBtn.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        modalBox.classList.remove("zoom-out");
+        modalBox.classList.add("zoom-in");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modalBox.classList.remove("zoom-in");
+        modalBox.classList.add("zoom-out");
+        setTimeout(() => {
+          overlay.classList.add("hidden");
+        }, 300); // Sesuai durasi animasi
+      });
+
+      // Tutup modal saat klik di luar modal box
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          closeBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
