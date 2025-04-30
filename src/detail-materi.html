@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <style>
+        /* Animasi zoom in dan out */
+        .zoom-in {
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        .zoom-out {
+            animation: zoomOut 0.3s ease-in;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes zoomOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <div class="w-full h-full bg-white">
+        <nav class="bg-[#0D009E]" x-data="{ isOpen: false }">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="shrink-0">
+                            <img class="size-8" src="images/logo.svg" alt="Your Company" />
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="index.html"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                                <a href="materi.html"
+                                    class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                                    aria-current="page">Materi</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Informasi</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Panduan</a>
+                                <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tenatang
+                                    Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                            <a href="login.html"
+                                class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                                Login
+                            </a>
+                            <button id="openModalBtn"
+                                class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                                Daftar
+                            </button>
+                            <!-- <button
+                  type="button"
+                  class="relative rounded-full bg-[#0D009E] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                >
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">View notifications</span>
+                  <svg
+                    class="size-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                    />
+                  </svg>
+                </button> -->
+
+                            <!-- Profile dropdown -->
+                            <div class="relative ml-3">
+                                <div>
+                                    <!-- <button
+                      type="button"
+                      class="relative flex max-w-xs items-center rounded-full bg-[#0D009E] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                      id="user-menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      @click="isOpen = !isOpen"
+                    >
+                      <span class="absolute -inset-1.5"></span>
+                      <span class="sr-only">Open user menu</span>
+                      <img
+                        class="size-8 rounded-full"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                      />
+                    </button> -->
+                                </div>
+                                <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform"
+                                    x-transition:enter-start="opacity-0 scale-95"
+                                    x-transition:enter-end="opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in duration-75 transform"
+                                    x-transition:leave-start="opacity-100 scale-100"
+                                    x-transition:leave-end="opacity-0 scale-95"
+                                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                    tabindex="-1">
+                                    <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-1">Settings</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex md:hidden">
+                        <!-- Mobile menu button -->
+                        <button @click="isOpen = !isOpen" type="button"
+                            class="relative inline-flex items-center justify-center rounded-md bg-[#0D009E] p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="absolute -inset-0.5"></span>
+                            <span class="sr-only">Open main menu</span>
+                            <!-- Menu open: "hidden", Menu closed: "block" -->
+                            <svg :class="{'hidden': isOpen, 'block': !isOpen }" class="block size-6" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!-- Menu open: "block", Menu closed: "hidden" -->
+                            <svg :class="{'block': isOpen, 'hidden': !isOpen }" class="hidden size-6" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div x-show="isOpen" class="md:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                        aria-current="page">Dashboard</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                    <a href="#"
+                        class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+                </div>
+                <div class="border-t border-gray-700 pt-4 pb-3">
+                    <div class="flex items-center px-5">
+                        <div class="shrink-0">
+                            <img class="size-10 rounded-full"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="" />
+                        </div>
+                        <div class="ml-3">
+                            <div class="text-base/5 font-medium text-white">Tom Cook</div>
+                            <div class="text-sm font-medium text-gray-400">
+                                tom@example.com
+                            </div>
+                        </div>
+                        <button type="button"
+                            class="relative ml-auto shrink-0 rounded-full bg-[#0D009E] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">View notifications</span>
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-3 space-y-1 px-2">
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your
+                            Profile</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
+                        <a href="#"
+                            class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- main content start-->
+        <main class="h-full w-full mx-auto container !mb-40">
+            <!-- Profile -->
+            <article
+                class="w-full h-full p-8 mt-20 mb-14 flex justify-center items-center mx-auto gap-5 bg-[#0099FF] rounded-3xl shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)">
+                <div class="w-56 h-50 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                <div
+                    class="w-full h-50 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)] grid grid-cols-2 gap-10 ">
+                    <div class="flex flex-col justify-center items-start p-10 gap-3">
+                        <h2 class="font-bold">Nama Materi</h2>
+                        <h2 class="font-bold ">Topik</h2>
+                        <h2 class="font-bold ">Level</h2>
+                        <h2 class="font-bold ">20 Jam Belajar</h2>
+                    </div>
+                    <div class="flex flex-col justify-center items-end p-10 gap-3">
+                        <a href="isi-materi.html"
+                            class="w-52 h-12 text-white bg-sky-500 flex justify-center items-center rounded-[10px] shadow-[1px_2px_7.900000095367432px_1px_rgba(0,0,0,0.25)]">Mulai
+                            Belajar</a>
+                    </div>
+
+                </div>
+            </article>
+            <!-- Materi -->
+            <article
+                class="w-full h-full flex flex-col py-10 justify-center items-center mx-auto gap-12 bg-zinc-100 rounded-3xl shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)">
+                <hx2 class="flex justify-center col-span-3 font-bold text-xl text-[#0099FF]">Apa Yang Akan Anda Dapatkan
+                </hx2>
+                <section class="w-full place-items-center grid grid-cols-3">
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                </section>
+                <div
+                    class="w-3/5 col-span-3 h-fit bg-white rounded-3xl mb-10 py-5 px-15 flex flex-col items-center justify-center">
+                    <h2 class="flex justify-center col-span-3 font-bold text-xl text-[#0099FF]">Apa Yang Akan Anda
+                        Dapatkan</h2>
+                    <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit
+                        amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.</p>
+                </div>
+            </article>
+            <article class="mt-10 opacity-0">wako</article>
+        </main>
+        <!-- main content end -->
+    </div>
+
+    <!-- Overlay dan Modal -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div id="modalBox" class="bg-white p-6 rounded-2xl shadow-xl w-80 text-center zoom-in relative">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Daftar Sebagai</h2>
+            <div class="space-y-4">
+                <a href="register-guru.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Guru</a>
+                <a href="register-siswa.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Siswa</a>
+                <a href="register-umum.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Umum</a>
+            </div>
+
+            <!-- Tombol close -->
+            <button id="closeModalBtn"
+                class="absolute top-2 right-2 text-white bg-[#0D009E] rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                &times;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const overlay = document.getElementById("modalOverlay");
+        const modalBox = document.getElementById("modalBox");
+
+        openBtn.addEventListener("click", () => {
+            overlay.classList.remove("hidden");
+            modalBox.classList.remove("zoom-out");
+            modalBox.classList.add("zoom-in");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modalBox.classList.remove("zoom-in");
+            modalBox.classList.add("zoom-out");
+            setTimeout(() => {
+                overlay.classList.add("hidden");
+            }, 300); // Sesuai durasi animasi
+        });
+
+        // Tutup modal saat klik di luar modal box
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                closeBtn.click();
+            }
+        });
+
+        // script sorting
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("openModalBtn");
+            const list = document.getElementById("materiList");
+
+            btn.addEventListener("click", () => {
+                list.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
