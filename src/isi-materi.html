@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8" />
@@ -48,8 +48,8 @@
 
 <body class="bg-white font-poppins">
     <div class="w-full h-full bg-white">
-        <nav class="bg-[#0D009E] border-gray-200 px-4 lg:px-6 py-4">
-            <div class="flex flex-wrap justify-between items-center">
+         <nav class="bg-[#0D009E] border-gray-200 lg:px-6 py-4">
+            <div class="flex flex-wrap justify-between px-16 items-center">
                 <div class="flex justify-start items-center">
 
                     <!-- toggle back -->
@@ -70,10 +70,9 @@
                     </a>
                 </div>
                 <div class="flex items-center lg:order-2">
-                    <!-- Dashboard Button -->
                     <!-- toggle membuka sidebar -->
                     <a href="#" onclick="toggleSidebar()"
-                        class="w-28 h-9 text-white bg-sky-500 flex justify-center items-center rounded-2xl shadow-lg">Daftar
+                        class="w-32 h-9 text-white bg-sky-500 flex justify-center items-center rounded-2xl shadow-lg">Daftar
                         Modul</a>
                     <!-- toggle menutup sidebar-->
                     <div id="sidebar"
@@ -148,13 +147,21 @@
                      <span class="sr-only">Toggle sidebar</span>
                  </button>
                 </div>
+                <!-- Dashboard Button -->
+                        <button type="button"
+                            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+                            <span class="sr-only">Open user menu</span>
+                            <img class="w-8 h-8 rounded-full"
+                                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                        </button>
             </div>
         </nav>
 
 
         
         <!-- main content start-->
-        <main class="h-full w-full mx-auto container">
+        <main class="h-full w-full mb-10 mx-auto container">
             <!-- Profile -->
             <article
                 class="w-full h-full mt-20 flex flex-col pb-32 justify-center items-center mx-auto gap-12 bg-zinc-100 rounded-3xl shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)">
