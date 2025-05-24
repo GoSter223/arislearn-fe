@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArisLearn | Detail Materi</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+    <style>
+        /* Animasi zoom in dan out */
+        .zoom-in {
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        .zoom-out {
+            animation: zoomOut 0.3s ease-in;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes zoomOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <div class="w-full h-full bg-white">
+        <header class="antialiased">
+            <nav class="bg-[#0D009E] border-gray-200 px-4 lg:px-6 py-4">
+                <div class="flex flex-wrap justify-between items-center">
+                    <div class="flex justify-start items-center">
+
+                        <!-- toggle back -->
+                        <a href="https://flowbite.com" class="flex mr-4 gap-5">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_52_299" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                    width="29" height="29">
+                                    <rect width="29" height="29" fill="#D9D9D9" />
+                                </mask>
+                                <g mask="url(#mask0_52_299)">
+                                    <path
+                                        d="M9.45513 15.7085L16.2218 22.4752L14.4999 24.1668L4.83325 14.5002L14.4999 4.8335L16.2218 6.52516L9.45513 13.2918H24.1666V15.7085H9.45513Z"
+                                        fill="white" />
+                                </g>
+                            </svg>
+                            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Lihat
+                                Materi Lain</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center lg:order-2">
+                        <!-- Dashboard Button -->
+                        <a href="isi-materi.html"
+                            class="w-24 h-9 text-white bg-sky-500 flex justify-center items-center rounded-2xl shadow-[1px_2px_7.900000095367432px_1px_rgba(0,0,0,0.25)]">Dashboard</a>
+                        <button type="button"
+                            class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+                            <span class="sr-only">Open user menu</span>
+                            <img class="w-8 h-8 rounded-full"
+                                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                        </button>
+                        <!-- toggle sidebar -->
+                        <!-- <button id="toggleSidebar" aria-expanded="true" aria-controls="sidebar"
+                         class="hidden p-2 mr-3 text-gray-600 rounded cursor-pointer lg:inline hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">
+                         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="17.5" cy="17.5" r="17.5" fill="#D9D9D9"/>
+                            <mask id="mask0_184_8" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="28" height="28">
+                            <rect x="3.88892" y="3.88867" width="26.5741" height="26.5741" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_184_8)">
+                            <path d="M12.5531 18.2831L18.7537 24.4838L17.1759 26.0339L8.31787 17.1759L17.1759 8.31787L18.7537 9.86803L12.5531 16.0686H26.0339V18.2831H12.5531Z" fill="white"/>
+                            </g>
+                            </svg>
+                            
+                     </button>
+                     <button aria-expanded="true" aria-controls="sidebar"
+                         class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                         <svg class="w-[18px] h-[18px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                             fill="none" viewBox="0 0 17 14">
+                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                         </svg>
+                         <span class="sr-only">Toggle sidebar</span>
+                     </button> -->
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- main content start-->
+        <main class="h-full w-full mx-auto container !mb-40">
+            <!-- Profile -->
+            <article
+                class="w-full h-full p-8 mt-20 mb-14  mx-auto bg-[#0099FF] rounded-3xl shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)">
+                <div class="flex justify-center items-center gap-5 ">
+                    <div class="w-56 h-50 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                    <div
+                        class="w-full h-50 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)] grid grid-cols-2 gap-10 ">
+                        <div class="flex flex-col justify-center items-start p-10 gap-3">
+                            <h2 class="font-bold">Nama Materi</h2>
+                            <h2 class="font-bold ">Topik</h2>
+                            <h2 class="font-bold ">Level</h2>
+                            <h2 class="font-bold ">20 Jam Belajar</h2>
+                        </div>
+                        <div class="flex flex-col justify-center items-end p-10 gap-3">
+                            <a href="isi-materi.html"
+                                class="w-52 h-12 text-green-700 text-xl font-bold bg-green-200 flex justify-center items-center rounded-[10px] shadow-[1px_2px_7.900000095367432px_1px_rgba(0,0,0,0.25)]">Lulus</a>
+                        </div>
+                </div>
+                </div>
+                <div class="flex flex-row justify-center items-center p-10 gap-10">
+                    <a href="isi-materi.html"
+                        class="w-52 h-12 text-[#0099FF] bg-white flex justify-center items-center rounded-[10px] shadow-[1px_2px_7.900000095367432px_1px_rgba(0,0,0,0.25)]">Belajar Lagi</a>
+                    <a href="isi-materi.html"
+                        class="w-52 h-12 text-[#0099FF] bg-white flex justify-center items-center rounded-[10px] shadow-[1px_2px_7.900000095367432px_1px_rgba(0,0,0,0.25)]">Lihat Sertifikat</a>
+                </div>
+            </article>
+            <!-- Materi -->
+            <article
+                class="w-full h-full flex flex-col py-10 justify-center items-center mx-auto gap-12 bg-zinc-100 rounded-3xl shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)">
+                <hx2 class="flex justify-center col-span-3 font-bold text-xl text-[#0099FF]">Apa Yang Akan Anda Dapatkan
+                </hx2>
+                <section class="w-full place-items-center grid grid-cols-3">
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                    <div class="w-96 h-48 bg-white rounded-[10px] shadow-[4px_4px_10px_1px_rgba(0,0,0,0.25)]"></div>
+                </section>
+                <div
+                    class="w-3/5 col-span-3 h-fit bg-white rounded-3xl mb-10 py-5 px-15 flex flex-col items-center justify-center">
+                    <h2 class="flex justify-center col-span-3 font-bold text-xl text-[#0099FF]">Apa Yang Akan Anda
+                        Dapatkan</h2>
+                    <p class="mt-4 truncate-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                        facilisi. Fusce sit
+                        amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Fusce sit amet
+                        turpis in
+                        justo congue dapibus. Sed in libero euismod, facilisis ligula at, fermentum erat. Curabitur
+                        tempus, velit vel tristique cursus, justo eros dapibus justo, et dapibus erat metus ut leo.</p>
+                </div>
+            </article>
+            <article class="mt-10 opacity-0">wako</article>
+        </main>
+        <!-- main content end -->
+    </div>
+
+    <!-- Overlay dan Modal -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div id="modalBox" class="bg-white p-6 rounded-2xl shadow-xl w-80 text-center zoom-in relative">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Daftar Sebagai</h2>
+            <div class="space-y-4">
+                <a href="register-guru.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Guru</a>
+                <a href="register-siswa.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Siswa</a>
+                <a href="register-umum.html"
+                    class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Umum</a>
+            </div>
+
+            <!-- Tombol close -->
+            <button id="closeModalBtn"
+                class="absolute top-2 right-2 text-white bg-[#0D009E] rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                &times;
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const overlay = document.getElementById("modalOverlay");
+        const modalBox = document.getElementById("modalBox");
+
+        openBtn.addEventListener("click", () => {
+            overlay.classList.remove("hidden");
+            modalBox.classList.remove("zoom-out");
+            modalBox.classList.add("zoom-in");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modalBox.classList.remove("zoom-in");
+            modalBox.classList.add("zoom-out");
+            setTimeout(() => {
+                overlay.classList.add("hidden");
+            }, 300); // Sesuai durasi animasi
+        });
+
+        // Tutup modal saat klik di luar modal box
+        overlay.addEventListener("click", (e) => {
+            if (e.target === overlay) {
+                closeBtn.click();
+            }
+        });
+
+        // script sorting
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("openModalBtn");
+            const list = document.getElementById("materiList");
+
+            btn.addEventListener("click", () => {
+                list.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
