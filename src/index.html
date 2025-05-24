@@ -1,86 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-100">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link href="./output.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <style>
-    /* Animasi zoom in dan out */
-    .zoom-in {
-      animation: zoomIn 0.3s ease-out;
-    }
-
-    .zoom-out {
-      animation: zoomOut 0.3s ease-in;
-    }
-
-    @keyframes zoomIn {
-      0% {
-        opacity: 0;
-        transform: scale(0.8);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style>
+      /* Animasi zoom in dan out */
+      .zoom-in {
+        animation: zoomIn 0.3s ease-out;
       }
 
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes zoomOut {
-      0% {
-        opacity: 1;
-        transform: scale(1);
+      .zoom-out {
+        animation: zoomOut 0.3s ease-in;
       }
 
-      100% {
-        opacity: 0;
-        transform: scale(0.8);
+      @keyframes zoomIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
-    }
-  </style>
-</head>
 
-<body class="h-full">
-  <div class="min-h-full">
-    <nav class="bg-[#0D009E]" x-data="{ isOpen: false }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex items-center">
-            <div class="shrink-0">
-              <img class="size-8" src="images/logo.svg" alt="Your Company" />
-            </div>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page">Home</a>
-                <a href="materi.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Materi</a>
-                <a href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Informasi</a>
-                <a href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Panduan</a>
-                <a href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tenatang
-                  Kami</a>
+      @keyframes zoomOut {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <div class="min-h-full">
+      <nav class="bg-[#0D009E]" x-data="{ isOpen: false }">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center">
+              <div class="shrink-0">
+                <img class="size-8" src="images/logo.svg" alt="Your Company" />
+              </div>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a
+                    href="#"
+                    class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    aria-current="page"
+                    >Home</a
+                  >
+                  <a
+                    href="#"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Materi</a
+                  >
+                  <a
+                    href="#"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Informasi</a
+                  >
+                  <a
+                    href="#"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Panduan</a
+                  >
+                  <a
+                    href="#"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >Tenatang Kami</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-4 flex items-center md:ml-6">
-              <a href="login.html"
-                class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                Login
-              </a>
-              <button id="openModalBtn"
-                class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                Daftar
-              </button>
-              <!-- <button
+            <div class="hidden md:block">
+              <div class="ml-4 flex items-center md:ml-6">
+                <a
+                  href="login.html"
+                  class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                >
+                  Login
+                </a>
+                <button
+                  id="openModalBtn"
+                  class="bg-[#0D009E] text-white px-6 py-3 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                >
+                  Daftar
+                </button>
+                <!-- <button
                   type="button"
                   class="relative rounded-full bg-[#0D009E] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                 >
@@ -103,10 +121,10 @@
                   </svg>
                 </button> -->
 
-              <!-- Profile dropdown -->
-              <div class="relative ml-3">
-                <div>
-                  <!-- <button
+                <!-- Profile dropdown -->
+                <div class="relative ml-3">
+                  <div>
+                    <!-- <button
                       type="button"
                       class="relative flex max-w-xs items-center rounded-full bg-[#0D009E] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                       id="user-menu-button"
@@ -122,361 +140,511 @@
                         alt=""
                       />
                     </button> -->
-                </div>
-                <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform"
-                  x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-                  x-transition:leave="transition ease-in duration-75 transform"
-                  x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden"
-                  role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                  <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                    id="user-menu-item-0">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                    id="user-menu-item-1">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                    id="user-menu-item-2">Sign out</a>
+                  </div>
+                  <div
+                    x-show="isOpen"
+                    x-transition:enter="transition ease-out duration-100 transform"
+                    x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75 transform"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-95"
+                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="user-menu-button"
+                    tabindex="-1"
+                  >
+                    <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-0"
+                      >Your Profile</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-1"
+                      >Settings</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabindex="-1"
+                      id="user-menu-item-2"
+                      >Sign out</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
-            <button @click="isOpen = !isOpen" type="button"
-              class="relative inline-flex items-center justify-center rounded-md bg-[#0D009E] p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-              aria-controls="mobile-menu" aria-expanded="false">
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <!-- Menu open: "hidden", Menu closed: "block" -->
-              <svg :class="{'hidden': isOpen, 'block': !isOpen }" class="block size-6" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <!-- Menu open: "block", Menu closed: "hidden" -->
-              <svg :class="{'block': isOpen, 'hidden': !isOpen }" class="hidden size-6" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
+            <div class="-mr-2 flex md:hidden">
+              <!-- Mobile menu button -->
+              <button
+                @click="isOpen = !isOpen"
+                type="button"
+                class="relative inline-flex items-center justify-center rounded-md bg-[#0D009E] p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!-- Menu open: "hidden", Menu closed: "block" -->
+                <svg
+                  :class="{'hidden': isOpen, 'block': !isOpen }"
+                  class="block size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+                <!-- Menu open: "block", Menu closed: "hidden" -->
+                <svg
+                  :class="{'block': isOpen, 'hidden': !isOpen }"
+                  class="hidden size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <div x-show="isOpen" class="md:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-            aria-current="page">Dashboard</a>
-          <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-          <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-          <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-          <a href="#"
-            class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
-        </div>
-        <div class="border-t border-gray-700 pt-4 pb-3">
-          <div class="flex items-center px-5">
-            <div class="shrink-0">
-              <img class="size-10 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt="" />
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div x-show="isOpen" class="md:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a
+              href="#"
+              class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+              aria-current="page"
+              >Dashboard</a
+            >
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Team</a
+            >
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Projects</a
+            >
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Calendar</a
+            >
+            <a
+              href="#"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >Reports</a
+            >
+          </div>
+          <div class="border-t border-gray-700 pt-4 pb-3">
+            <div class="flex items-center px-5">
+              <div class="shrink-0">
+                <img
+                  class="size-10 rounded-full"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="ml-3">
+                <div class="text-base/5 font-medium text-white">Tom Cook</div>
+                <div class="text-sm font-medium text-gray-400">
+                  tom@example.com
+                </div>
+              </div>
+              <button
+                type="button"
+                class="relative ml-auto shrink-0 rounded-full bg-[#0D009E] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+              >
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg
+                  class="size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                  />
+                </svg>
+              </button>
             </div>
-            <div class="ml-3">
-              <div class="text-base/5 font-medium text-white">Tom Cook</div>
-              <div class="text-sm font-medium text-gray-400">
-                tom@example.com
+            <div class="mt-3 space-y-1 px-2">
+              <a
+                href="#"
+                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                >Your Profile</a
+              >
+              <a
+                href="#"
+                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                >Settings</a
+              >
+              <a
+                href="#"
+                class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                >Sign out</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section>
+          <div
+            class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 grid grid-cols-2"
+          >
+            <div class="h-[500px] content-center">
+              <div class="">
+                <p class="text-4xl">Ilmu Adalah Alat Untuk</p>
+                <p class="text-4xl">Meraih Kesuksesan</p>
+                <p class="my-4">Mulailah dari pelajaran yang kamu sukai</p>
+                <a
+                  href="#"
+                  class="bg-[#0099FF] px-[10px] pt-[10px] pb-[13px] text-white rounded-[10px] shadow-xl hover:shadow-xl/20 hover:bg-[#00C3FF] active:shadow-xl active:bg-[#0099FF]"
+                  >Mulai Belajar</a
+                >
               </div>
             </div>
-            <button type="button"
-              class="relative ml-auto shrink-0 rounded-full bg-[#0D009E] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">View notifications</span>
-              <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                aria-hidden="true" data-slot="icon">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-3 space-y-1 px-2">
-            <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your
-              Profile</a>
-            <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-            <a href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign
-              out</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <section>
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 grid grid-cols-2">
-          <div class="h-[500px] content-center">
-            <div class="">
-              <p class="text-4xl">Ilmu Adalah Alat Untuk</p>
-              <p class="text-4xl">Meraih Kesuksesan</p>
-              <p class="my-4">Mulailah dari pelajaran yang kamu sukai</p>
-              <a href="#"
-                class="bg-[#0099FF] px-[10px] pt-[10px] pb-[13px] text-white rounded-[10px] shadow-xl hover:shadow-xl/20 hover:bg-[#00C3FF] active:shadow-xl active:bg-[#0099FF]">Mulai
-                Belajar</a>
-            </div>
-          </div>
-          <div class="h-[500px] relative content-center justify-items-center">
-            <div class="w-[455.82px] h-96 relative rounded-[10px]">
-              <div class="w-96 h-96 left-0 top-0 absolute bg-blue-700 rounded-[10px]"></div>
-              <div class="w-96 h-96 left-[63.13px] top-[35.31px] absolute bg-sky-500 rounded-[10px]"></div>
-            </div>
-            <div class="absolute top-0">
-              <div class="relative">
-                <img src="images/siblings.png" alt="" class="relative" />
+            <div class="h-[500px] relative content-center justify-items-center">
+              <div class="w-[455.82px] h-96 relative rounded-[10px]">
                 <div
-                  class="w-full h-[400px] bg-[radial-gradient(ellipse_125.26%_83.58%_at_50.00%_0.00%,_rgba(255,_255,_255,_0)_64%,_#f3f4f6_83%)] absolute top-[100px]">
+                  class="w-96 h-96 left-0 top-0 absolute bg-blue-700 rounded-[10px]"
+                ></div>
+                <div
+                  class="w-96 h-96 left-[63.13px] top-[35.31px] absolute bg-sky-500 rounded-[10px]"
+                ></div>
+              </div>
+              <div class="absolute top-0">
+                <div class="relative">
+                  <img src="images/siblings.png" alt="" class="relative" />
+                  <div
+                    class="w-full h-[400px] bg-[radial-gradient(ellipse_125.26%_83.58%_at_50.00%_0.00%,_rgba(255,_255,_255,_0)_64%,_#f3f4f6_83%)] absolute top-[100px]"
+                  ></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- kolaborasi -->
-      <section>
-        <img src="images/wave1.svg" alt="" class="w-full" />
-        <div class="bg-[#00C3FF] text-center">
-          <p class="text-4xl text-white mb-7">Kolaborasi</p>
-          <div class="gap-[40px] flex px-[40px]">
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-            <div class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]">
-              <img src="images/kemendigbud.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <img src="images/wave2.svg" alt="" class="w-full" />
-      </section>
-      <!-- akhir kolaborasi -->
-      <!-- fitur -->
-      <section>
-        <div class="text-center">
-          <p class="text-4xl m-0">Fitur Platform</p>
-        </div>
-        <div class="relative w-full h-screen">
-          <div class="absolute h-[550px] w-[4px] bg-[#808080] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-          <!-- garis horizontal -->
-          <div class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[80px]"></div>
-          <div class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 translate-x-[90px] rotate-90 top-[160px]"></div>
-          <div class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[270px]"></div>
-          <div class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 translate-x-[90px] rotate-90 top-[350px]"></div>
-          <div class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[460px]"></div>
-          <!-- block -->
-          <div
-            class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[95px] shadow-xl py-4 ps-5 pe-5 text-white">
-            <div class="flex items-center h-full gap-2">
-              <div class="h-auto w-[70%]">
-                <p class="font-bold text-lg">Materi</p>
-                <p class="text-xs">
-                  Terdapat materi yang langsung diberikan oleh guru dengan
-                  media yang beragam.
-                </p>
+        </section>
+        <!-- kolaborasi -->
+        <section>
+          <img src="images/wave1.svg" alt="" class="w-full" />
+          <div class="bg-[#00C3FF] text-center">
+            <p class="text-4xl text-white mb-7">Kolaborasi</p>
+            <div class="gap-[40px] flex px-[40px]">
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
               </div>
-              <div>
-                <img src="images/book.svg" alt="" />
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
+              </div>
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
+              </div>
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
+              </div>
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
+              </div>
+              <div
+                class="bg-white px-2 py-4 rounded-[10px] shadow-lg my-[18px]"
+              >
+                <img src="images/kemendigbud.png" alt="" />
               </div>
             </div>
           </div>
-          <div
-            class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 translate-x-[182px] top-[180px] shadow-xl py-4 pe-5 ps-5 text-white">
-            <div class="flex items-center h-full gap-2">
-              <div>
-                <img src="images/robot.svg" alt="" />
-              </div>
-              <div class="h-auto w-[70%]">
-                <p class="font-bold text-lg">ChatBot</p>
-                <p class="text-xs">
-                  Terdapat chatbot untuk bertanya terkait materi.
-                </p>
-              </div>
-            </div>
+          <img src="images/wave2.svg" alt="" class="w-full" />
+        </section>
+        <!-- akhir kolaborasi -->
+        <!-- fitur -->
+        <section>
+          <div class="text-center">
+            <p class="text-4xl m-0">Fitur Platform</p>
           </div>
-          <div
-            class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[285px] shadow-xl py-4 ps-5 pe-5 text-white">
-            <div class="flex items-center h-full gap-2">
-              <div class="h-auto w-[70%]">
-                <p class="font-bold text-lg">Sertifikat</p>
-                <p class="text-xs">
-                  Terdapat terdapat sertifikat setelah menyelesaikan kelas.
-                </p>
-              </div>
-              <div>
-                <img src="images/sertifikat.svg" alt="" />
-              </div>
-            </div>
-          </div>
-          <div
-            class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 translate-x-[182px] top-[370px] shadow-xl py-4 pe-5 ps-5 text-white">
-            <div class="flex items-center h-full gap-2">
-              <div>
-                <img src="images/game.svg" alt="" />
-              </div>
-              <div class="h-auto w-[70%]">
-                <p class="font-bold text-lg">Gamifikasi</p>
-                <p class="text-xs">
-                  Terdapat quiz harian dan papan peringkat yang direset setiap
-                  minggu.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[475px] shadow-xl py-4 ps-5 pe-5 text-white">
-            <div class="flex items-center h-full gap-2">
-              <div class="h-auto w-[70%]">
-                <p class="font-bold text-lg">Dashboard</p>
-                <p class="text-xs">
-                  Terdapat dashboard untuk melihat status aktivitas
-                </p>
-              </div>
-              <div>
-                <img src="images/grafik.svg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- akhir fitur -->
-      <!-- testimoni -->
-      <section>
-        <img src="images/wave3.svg" alt="" class="w-full" />
-        <div class="bg-[#00C3FF] text-center">
-          <p class="text-4xl text-white mb-7">Testimoni</p>
-          <div class="gap-[40px] flex px-[40px]">
-            <div class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]">
-              <div class="flex gap-2">
-                <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+          <div class="relative w-full h-screen">
+            <div
+              class="absolute h-[550px] w-[4px] bg-[#808080] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            ></div>
+            <!-- garis horizontal -->
+            <div
+              class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[80px]"
+            ></div>
+            <div
+              class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 translate-x-[90px] rotate-90 top-[160px]"
+            ></div>
+            <div
+              class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[270px]"
+            ></div>
+            <div
+              class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 translate-x-[90px] rotate-90 top-[350px]"
+            ></div>
+            <div
+              class="absolute h-[180px] w-[4px] bg-[#808080] left-1/2 -translate-x-[90px] rotate-90 top-[460px]"
+            ></div>
+            <!-- block -->
+            <div
+              class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[95px] shadow-xl py-4 ps-5 pe-5 text-white"
+            >
+              <div class="flex items-center h-full gap-2">
+                <div class="h-auto w-[70%]">
+                  <p class="font-bold text-lg">Materi</p>
+                  <p class="text-xs">
+                    Terdapat materi yang langsung diberikan oleh guru dengan
+                    media yang beragam.
+                  </p>
+                </div>
                 <div>
-                  <p class="font-semibold mt-[-5px]">Nama</p>
-                  <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  <img src="images/book.svg" alt="" />
                 </div>
-              </div>
-              <div class="text-left text-gray-500 h-[120px] line-clamp-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
-                impedit mollitia molestiae vel, amet culpa corporis tempora
-                consequuntur velit officia voluptatem fugiat! Aut.
-              </div>
-              <div class="mt-1 text-right">
-                <a href="#" class="font-semibold">Selengkapnya</a>
               </div>
             </div>
-            <div class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]">
-              <div class="flex gap-2">
-                <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+            <div
+              class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 translate-x-[182px] top-[180px] shadow-xl py-4 pe-5 ps-5 text-white"
+            >
+              <div class="flex items-center h-full gap-2">
                 <div>
-                  <p class="font-semibold mt-[-5px]">Nama</p>
-                  <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  <img src="images/robot.svg" alt="" />
                 </div>
-              </div>
-              <div class="text-left text-gray-500 h-[120px] line-clamp-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
-                impedit mollitia molestiae vel, amet culpa corporis tempora
-                consequuntur velit officia voluptatem fugiat! Aut.
-              </div>
-              <div class="mt-1 text-right">
-                <a href="#" class="font-semibold">Selengkapnya</a>
+                <div class="h-auto w-[70%]">
+                  <p class="font-bold text-lg">ChatBot</p>
+                  <p class="text-xs">
+                    Terdapat chatbot untuk bertanya terkait materi.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]">
-              <div class="flex gap-2">
-                <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+            <div
+              class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[285px] shadow-xl py-4 ps-5 pe-5 text-white"
+            >
+              <div class="flex items-center h-full gap-2">
+                <div class="h-auto w-[70%]">
+                  <p class="font-bold text-lg">Sertifikat</p>
+                  <p class="text-xs">
+                    Terdapat terdapat sertifikat setelah menyelesaikan kelas.
+                  </p>
+                </div>
                 <div>
-                  <p class="font-semibold mt-[-5px]">Nama</p>
-                  <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  <img src="images/sertifikat.svg" alt="" />
                 </div>
               </div>
-              <div class="text-left text-gray-500 h-[120px] line-clamp-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
-                impedit mollitia molestiae vel, amet culpa corporis tempora
-                consequuntur velit officia voluptatem fugiat! Aut.
+            </div>
+            <div
+              class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 translate-x-[182px] top-[370px] shadow-xl py-4 pe-5 ps-5 text-white"
+            >
+              <div class="flex items-center h-full gap-2">
+                <div>
+                  <img src="images/game.svg" alt="" />
+                </div>
+                <div class="h-auto w-[70%]">
+                  <p class="font-bold text-lg">Gamifikasi</p>
+                  <p class="text-xs">
+                    Terdapat quiz harian dan papan peringkat yang direset setiap
+                    minggu.
+                  </p>
+                </div>
               </div>
-              <div class="mt-1 text-right">
-                <a href="#" class="font-semibold">Selengkapnya</a>
+            </div>
+            <div
+              class="absolute w-72 h-36 bg-sky-500 rounded-[20px] left-1/2 -translate-x-[465px] top-[475px] shadow-xl py-4 ps-5 pe-5 text-white"
+            >
+              <div class="flex items-center h-full gap-2">
+                <div class="h-auto w-[70%]">
+                  <p class="font-bold text-lg">Dashboard</p>
+                  <p class="text-xs">
+                    Terdapat dashboard untuk melihat status aktivitas
+                  </p>
+                </div>
+                <div>
+                  <img src="images/grafik.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <img src="images/wave4.svg" alt="" class="w-full" />
-      </section>
-      <!-- akhir testimoni -->
-    </main>
-  </div>
-
-  <!-- Overlay dan Modal -->
-  <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div id="modalBox" class="bg-white p-6 rounded-2xl shadow-xl w-80 text-center zoom-in relative">
-      <h2 class="text-xl font-semibold mb-4 text-gray-800">Daftar Sebagai</h2>
-      <div class="space-y-4">
-        <a href="register-guru.html"
-          class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Guru</a>
-        <a href="register-siswa.html"
-          class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Siswa</a>
-        <a href="register-umum.html"
-          class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300">Umum</a>
-      </div>
-
-      <!-- Tombol close -->
-      <button id="closeModalBtn"
-        class="absolute top-2 right-2 text-white bg-[#0D009E] rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-        &times;
-      </button>
+        </section>
+        <!-- akhir fitur -->
+        <!-- testimoni -->
+        <section>
+          <img src="images/wave3.svg" alt="" class="w-full" />
+          <div class="bg-[#00C3FF] text-center">
+            <p class="text-4xl text-white mb-7">Testimoni</p>
+            <div class="gap-[40px] flex px-[40px]">
+              <div
+                class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]"
+              >
+                <div class="flex gap-2">
+                  <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+                  <div>
+                    <p class="font-semibold mt-[-5px]">Nama</p>
+                    <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  </div>
+                </div>
+                <div class="text-left text-gray-500 h-[120px] line-clamp-5">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
+                  impedit mollitia molestiae vel, amet culpa corporis tempora
+                  consequuntur velit officia voluptatem fugiat! Aut.
+                </div>
+                <div class="mt-1 text-right">
+                  <a href="#" class="font-semibold">Selengkapnya</a>
+                </div>
+              </div>
+              <div
+                class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]"
+              >
+                <div class="flex gap-2">
+                  <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+                  <div>
+                    <p class="font-semibold mt-[-5px]">Nama</p>
+                    <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  </div>
+                </div>
+                <div class="text-left text-gray-500 h-[120px] line-clamp-5">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
+                  impedit mollitia molestiae vel, amet culpa corporis tempora
+                  consequuntur velit officia voluptatem fugiat! Aut.
+                </div>
+                <div class="mt-1 text-right">
+                  <a href="#" class="font-semibold">Selengkapnya</a>
+                </div>
+              </div>
+              <div
+                class="bg-white px-4 py-4 rounded-[10px] shadow-lg my-[18px] min-h-[200px] w-[370px]"
+              >
+                <div class="flex gap-2">
+                  <div class="rounded-full h-[40px] w-[40px] bg-gray-500"></div>
+                  <div>
+                    <p class="font-semibold mt-[-5px]">Nama</p>
+                    <p class="text-gray-500 text-left mt-[-5px]">guru</p>
+                  </div>
+                </div>
+                <div class="text-left text-gray-500 h-[120px] line-clamp-5">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolore, aut assumenda corrupti debitis, ipsa aliquam repellat
+                  impedit mollitia molestiae vel, amet culpa corporis tempora
+                  consequuntur velit officia voluptatem fugiat! Aut.
+                </div>
+                <div class="mt-1 text-right">
+                  <a href="#" class="font-semibold">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img src="images/wave4.svg" alt="" class="w-full" />
+        </section>
+        <!-- akhir testimoni -->
+      </main>
     </div>
-  </div>
 
-  <script>
-    const openBtn = document.getElementById("openModalBtn");
-    const closeBtn = document.getElementById("closeModalBtn");
-    const overlay = document.getElementById("modalOverlay");
-    const modalBox = document.getElementById("modalBox");
+    <!-- Overlay dan Modal -->
+    <div
+      id="modalOverlay"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div
+        id="modalBox"
+        class="bg-white p-6 rounded-2xl shadow-xl w-80 text-center zoom-in relative"
+      >
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">Daftar Sebagai</h2>
+        <div class="space-y-4">
+          <a
+            href="register-guru.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Guru</a
+          >
+          <a
+            href="register-siswa.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Siswa</a
+          >
+          <a
+            href="register-umum.html"
+            class="block bg-[#0D009E] text-white py-2 rounded-lg hover:scale-105 transition-transform duration-300"
+            >Umum</a
+          >
+        </div>
 
-    openBtn.addEventListener("click", () => {
-      overlay.classList.remove("hidden");
-      modalBox.classList.remove("zoom-out");
-      modalBox.classList.add("zoom-in");
-    });
+        <!-- Tombol close -->
+        <button
+          id="closeModalBtn"
+          class="absolute top-2 right-2 text-white bg-[#0D009E] rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
 
-    closeBtn.addEventListener("click", () => {
-      modalBox.classList.remove("zoom-in");
-      modalBox.classList.add("zoom-out");
-      setTimeout(() => {
-        overlay.classList.add("hidden");
-      }, 300); // Sesuai durasi animasi
-    });
+    <script>
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
+      const overlay = document.getElementById("modalOverlay");
+      const modalBox = document.getElementById("modalBox");
 
-    // Tutup modal saat klik di luar modal box
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) {
-        closeBtn.click();
-      }
-    });
-  </script>
-</body>
+      openBtn.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        modalBox.classList.remove("zoom-out");
+        modalBox.classList.add("zoom-in");
+      });
 
+      closeBtn.addEventListener("click", () => {
+        modalBox.classList.remove("zoom-in");
+        modalBox.classList.add("zoom-out");
+        setTimeout(() => {
+          overlay.classList.add("hidden");
+        }, 300); // Sesuai durasi animasi
+      });
+
+      // Tutup modal saat klik di luar modal box
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          closeBtn.click();
+        }
+      });
+    </script>
+  </body>
 </html>
